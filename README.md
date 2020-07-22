@@ -1,24 +1,9 @@
-# github-api-ui
+# Vue GitHub API UI
 
-## Project setup
-```
-npm install
-```
+This is a project to test the GitHub API.
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
+npm install bootstrap jquery popper.js --save
+npm install sass-loader node-sass style-loader --save-dev
+npm install vuex  --save
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
