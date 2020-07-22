@@ -2,7 +2,7 @@
   <div id="app" class="pb-5">
     <RepositoryInput />
 
-    <template v-if="$store.state.user.showRepositoryNotFoundMessage">
+    <template v-if="user.showRepositoryNotFoundMessage">
       <RepositoryNotFoundMessage />
     </template>
 
@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import RepositoryInput from "./components/RepositoryInput";
 import RepositoriesList from "./components/RepositoriesList";
 import RepositoryNotFoundMessage from "./components/RepositoryNotFoundMessage";
@@ -20,6 +21,9 @@ import RepositoryNotFoundMessage from "./components/RepositoryNotFoundMessage";
 export default {
   name: "App",
   components: { RepositoriesList, RepositoryInput, RepositoryNotFoundMessage },
+  computed: {
+    ...mapState(['user'])
+  }
 };
 </script>
 

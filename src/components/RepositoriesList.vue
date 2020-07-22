@@ -7,7 +7,7 @@
           <ul class="list-group">
             <li
               class="list-group-item"
-              v-for="item in $store.state.user.userRepositories"
+              v-for="item in user.userRepositories"
               :key="item.id"
             >
               <div class="py-2">
@@ -27,7 +27,13 @@
 </template>
 
 <script>
-export default {};
+import { mapState } from 'vuex'
+
+export default {
+  computed: {
+    ...mapState(['user'])
+  }
+};
 </script>
 
 <style></style>
