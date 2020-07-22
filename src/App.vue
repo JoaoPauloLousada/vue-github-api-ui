@@ -1,28 +1,28 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="pb-5">
+    <RepositoryInput />
+
+    <template v-if="$store.state.user.showRepositoryNotFoundMessage">
+      <RepositoryNotFoundMessage />
+    </template>
+
+    <template v-else>
+      <RepositoriesList />
+    </template>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import RepositoryInput from "./components/RepositoryInput";
+import RepositoriesList from "./components/RepositoriesList";
+import RepositoryNotFoundMessage from "./components/RepositoryNotFoundMessage";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { RepositoriesList, RepositoryInput, RepositoryNotFoundMessage },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import "./assets/styles/app.scss";
 </style>
